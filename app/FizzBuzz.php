@@ -3,7 +3,7 @@
 namespace App;
 
 
-class FizzBuzzClass
+class FizzBuzz
 {
     public function fizzBuzz(int $num): string {
         

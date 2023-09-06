@@ -2,48 +2,48 @@
 
 namespace Tests\Unit;
 
-use App\FizzBuzzClass;
+use App\FizzBuzz;
 use PHPUnit\Framework\TestCase;
 use TypeError;
 
 class FizzBuzzTest extends TestCase
 {
-    public function testFrizzBuzzMethodGivesNumberAsParameter() {
+    public function testFizzBuzzMethodShouldThrowErrorWhenGivenNonNumberAsParameter() {
         $this->expectException(TypeError::class);
-        $class = new FizzBuzzClass();
+        $class = new FizzBuzz();
         $result = $class->fizzBuzz('abcd');
     }
 
-    public function testFrizzBuzzMethodReturnString() {
-        $class = new FizzBuzzClass();
+    public function testFizzBuzzMethodShouldReturnString() {
+        $class = new FizzBuzz();
         $result = $class->fizzBuzz(12345);
         $this->assertIsString($result);
     }
 
     public function testInFizzBuzzMultiplesOfThreeInputShouldReturnFizzInsteadNumber()
     {
-        $class = new FizzBuzzClass();
+        $class = new FizzBuzz();
         $result = $class->fizzBuzz(9);
         $this->assertEquals('Fizz', $result);
     }
 
     public function testInFizzBuzzMultiplesOfFiveInputShouldReturnBuzzInsteadNumber()
     {
-        $class = new FizzBuzzClass();
+        $class = new FizzBuzz();
         $result = $class->fizzBuzz(10);
         $this->assertEquals('Buzz', $result);
     }
 
     public function testInFizzBuzzMultiplesBothOfFiveAndThreeInputShouldReturnFizzBuzzInsteadNumber()
     {
-        $class = new FizzBuzzClass();
+        $class = new FizzBuzz();
         $result = $class->fizzBuzz(15);
         $this->assertEquals('FizzBuzz', $result);
     }
 
     public function testInFizzBuzzNotMultiplesOfFiveOrOfThreeInputShouldReturnEmptyString()
     {
-        $class = new FizzBuzzClass();
+        $class = new FizzBuzz();
         $result = $class->fizzBuzz(16);
         $this->assertEmpty($result);
     }
