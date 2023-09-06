@@ -14,7 +14,7 @@ class FizzBuzz
         } else if ($num % 5 == 0) {
             return 'Buzz';
         } else {
-            return '';
+            return (string)$num;
         }
     }
 }

@@ -16,8 +16,9 @@ class FizzBuzzTest extends TestCase
 
     public function testFizzBuzzMethodShouldReturnString() {
         $class = new FizzBuzz();
-        $result = $class->fizzBuzz(12345);
+        $result = $class->fizzBuzz(13);
         $this->assertIsString($result);
+        $this->assertEquals($result, '13');
     }
 
     public function testInFizzBuzzMultiplesOfThreeInputShouldReturnFizzInsteadNumber()
@@ -39,12 +40,5 @@ class FizzBuzzTest extends TestCase
         $class = new FizzBuzz();
         $result = $class->fizzBuzz(15);
         $this->assertEquals('FizzBuzz', $result);
-    }
-
-    public function testInFizzBuzzNotMultiplesOfFiveOrOfThreeInputShouldReturnEmptyString()
-    {
-        $class = new FizzBuzz();
-        $result = $class->fizzBuzz(16);
-        $this->assertEmpty($result);
     }
 }
